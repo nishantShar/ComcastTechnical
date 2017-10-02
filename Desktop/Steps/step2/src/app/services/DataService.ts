@@ -9,10 +9,7 @@ export class DataService {
 
   }
   GetData() : Observable<any> {
-    console.log(this.http.get("../data.json")
-      .map((response: Response) => {
-        return <any>response.json();
-      }));
+    
     return this.http.get("../data.json")
       .map((response: Response) => {
         return <any>response.json();

@@ -21,7 +21,7 @@ export class HomeComponent {
   ngOnInit() {
     this.DataService.GetData().subscribe(data => {
       this.dataset = data;
-      console.log(this.dataset);
+      
     })
   
   }

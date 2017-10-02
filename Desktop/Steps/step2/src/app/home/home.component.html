@@ -1,2 +1,33 @@
-<h1>Retrieving data from data.json using HTTP</h1>
+<h1>Displaying data in a list</h1>
+
+<!-- Table bootstrap classes -->
+<table class="table table-responsive col-md-3">
+  <thead class="thead-inverse">
+  <tr class="tableHeader ">
+    <th>name
+<span *ngIf="direction == 1 &&column ==='name' " class="glyphicon glyphicon-save"></span>
+            <span *ngIf="direction == -1 &&column ==='name'" class="glyphicon glyphicon-open"></span>  </th>
+    <th>category
+            <span *ngIf="direction == 1 && column ==='category'" class="glyphicon glyphicon-save"></span>
+            <span *ngIf="direction == -1 && column ==='category'" class="glyphicon glyphicon-open"></span>
+
+
+    </th>
+    <th>amount
+            <span *ngIf="direction == 1 && column ==='amount'" class="glyphicon glyphicon-save"></span>
+            <span *ngIf="direction == -1 && column ==='amount'" class="glyphicon glyphicon-open"></span>
+    </th>
+  </tr>
+  </thead> 
+  <tbody>
+  <!-- Apply 'orderBy' column -->
+  <tr *ngFor = "let data of dataset">
+    <td>{{data.name}}</td>
+    <td>{{data.category}}</td>
+    <td>{{data.amount}}</td>
+  </tr>
+  </tbody>
+</table>
+
+
 
