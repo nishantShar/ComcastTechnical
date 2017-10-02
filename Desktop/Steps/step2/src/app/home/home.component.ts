@@ -21,10 +21,17 @@ export class HomeComponent {
   ngOnInit() {
     this.DataService.GetData().subscribe(data => {
       this.dataset = data;
-      
-    })
+      })
   
   }
+
+  //sorting data with name
+  filterBy(column:string){
+    console.log(column);
+    this.isOrder = !this.isOrder;
+    this.column = column;
+    this.direction = this.isOrder ? -1 : 1;
+  };
 
   
 }

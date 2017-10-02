@@ -11,11 +11,13 @@ import { HomeComponent } from './home/home.component';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 import {DataService} from "./services/DataService";
+import {OrderByPipe} from "./home/orderBy"
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    OrderByPipe
   ],
   imports: [
     BrowserModule,

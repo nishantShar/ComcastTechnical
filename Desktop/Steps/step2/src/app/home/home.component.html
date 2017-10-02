@@ -1,19 +1,19 @@
-<h1>Displaying data in a list</h1>
+<h1>Sorting the column values according to user clicks on column names</h1>
 
 <!-- Table bootstrap classes -->
 <table class="table table-responsive col-md-3">
   <thead class="thead-inverse">
   <tr class="tableHeader ">
-    <th>name
+    <th (click)="filterBy('name')">name
 <span *ngIf="direction == 1 &&column ==='name' " class="glyphicon glyphicon-save"></span>
             <span *ngIf="direction == -1 &&column ==='name'" class="glyphicon glyphicon-open"></span>  </th>
-    <th>category
+    <th (click)="filterBy('category')">category
             <span *ngIf="direction == 1 && column ==='category'" class="glyphicon glyphicon-save"></span>
             <span *ngIf="direction == -1 && column ==='category'" class="glyphicon glyphicon-open"></span>
 
 
     </th>
-    <th>amount
+    <th (click)="filterBy('amount')">amount
             <span *ngIf="direction == 1 && column ==='amount'" class="glyphicon glyphicon-save"></span>
             <span *ngIf="direction == -1 && column ==='amount'" class="glyphicon glyphicon-open"></span>
     </th>
@@ -21,13 +21,10 @@
   </thead> 
   <tbody>
   <!-- Apply 'orderBy' column -->
-  <tr *ngFor = "let data of dataset">
+  <tr *ngFor = "let data of dataset | orderBy: {column: column, direction: direction}">
     <td>{{data.name}}</td>
     <td>{{data.category}}</td>
     <td>{{data.amount}}</td>
   </tr>
   </tbody>
 </table>
-
-
-
