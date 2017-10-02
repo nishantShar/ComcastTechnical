@@ -12,12 +12,14 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 import {DataService} from "./services/DataService";
 import {OrderByPipe} from "./home/orderBy"
+import {AboutComponent} from './about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    OrderByPipe
+    OrderByPipe,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
